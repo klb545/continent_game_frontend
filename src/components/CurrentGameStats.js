@@ -18,9 +18,8 @@ const CurrentGameStats = ({newGameMessage}) => {
             <br/><br/>
             {message}
             <br/><br/>
-            Current Score: {currentScore} / {maxScore}
-            <br/><br/>
-            Penalty: {penalty}
+            {currentScore == null ? null : <>Score: {currentScore} / {maxScore} &emsp;&emsp; Penalty: {penalty}</>}
+            
             
         </>
      );

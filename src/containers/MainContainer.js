@@ -139,7 +139,7 @@ const MainContainer = () => {
                 <SelectPlayerButton allPlayersList={allPlayersList} player={currentPlayer} fetchSelectedPlayer={fetchSelectedPlayer}/>
             </div>
             <div className="main_left">
-                {currentGame ? <><Form submitGuess={submitGuess}/><CurrentGameStats newGameMessage={newGameMessage}/></> 
+                {currentGame ? <><CurrentGameStats newGameMessage={newGameMessage}/><Form submitGuess={submitGuess}/></> 
                     : <NewGameButton currentPlayer={currentPlayer} createNewGameOnDbSideAndSetNewGameMessage={createNewGameOnDbSideAndSetNewGameMessage}/>}
             </div>
             <div className="main_right">

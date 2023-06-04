@@ -18,9 +18,11 @@
 }
 .main_left{
   grid-area: c;
+  text-align: center;
 }
 .main_right{
   grid-area: d;
+  text-align: center;
 }
 
 div{
