@@ -5,7 +5,7 @@ const SERVER_URL = 'http://localhost:8080';
 const MapChart = ({topologyUrl}) => {
 
     return ( 
-        <ComposableMap>
+        <ComposableMap className="map_container">
             <Geographies geography={topologyUrl}>
                 {({ geographies }) =>
                 geographies.map((geo) => (

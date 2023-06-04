@@ -47,7 +47,6 @@ const MainContainer = () => {
         fetchAllGamesList();
         fetchAllPlayersList();
         // createNewGameOnDbSideAndSetNewGameMessage(1);
-        fetchSelectedPlayer(1);
     }, [])
 
     // CREATE MAP BASED ON CONTINENT OF CURRENT GAME
@@ -134,15 +133,22 @@ const MainContainer = () => {
     // }
 
     return ( 
-        <>
-            <SelectPlayerButton allPlayersList={allPlayersList} player={currentPlayer} fetchSelectedPlayer={fetchSelectedPlayer}/>
-            <NewGameButton currentPlayer={currentPlayer} createNewGameOnDbSideAndSetNewGameMessage={createNewGameOnDbSideAndSetNewGameMessage}/>
-            <br/><br/>
-            <Form submitGuess={submitGuess}/>
-            {/* <ResponseToGuess newGameMessage={newGameMessage}/> */}
-            <CurrentGameStats newGameMessage={newGameMessage}/>
-            <MapChart topologyUrl={topologyUrl}/>
-        </>
+        <div className="main_container">
+            <div className="header_left"></div>
+            <div className="header_right">
+                <SelectPlayerButton allPlayersList={allPlayersList} player={currentPlayer} fetchSelectedPlayer={fetchSelectedPlayer}/>
+            </div>
+            <div className="main_left">
+                {currentGame ? <><Form submitGuess={submitGuess}/><CurrentGameStats newGameMessage={newGameMessage}/></> 
+                    : <NewGameButton currentPlayer={currentPlayer} createNewGameOnDbSideAndSetNewGameMessage={createNewGameOnDbSideAndSetNewGameMessage}/>}
+            </div>
+            <div className="main_right">
+                <NewGameButton currentPlayer={currentPlayer} createNewGameOnDbSideAndSetNewGameMessage={createNewGameOnDbSideAndSetNewGameMessage}/>
+                <br/><br/>
+                <MapChart topologyUrl={topologyUrl}/>
+            </div>
+            
+        </div>
      );
 }
  

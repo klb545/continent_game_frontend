@@ -12,7 +12,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
-// import Typography from '@mui/material/Typography';
+import Typography from '@mui/material/Typography';
 // import { green, pink, purple, blue } from '@mui/material/colors';
 
 import usericon from '../images/user-computer-icons-apple-icon-image-format-business-person-icon-png-human-male-man-people-3b847a39523c874ea3506e86eb09f6ea.png';
@@ -66,25 +66,24 @@ const SelectPlayerButton = ({allPlayersList, player, fetchSelectedPlayer}) => {
       setSelectedValue(value);
     };
     return ( 
-        <div className="add-new-chatroom" style={{justifyContent: "center", textAlign: "center", margin: "200px"}}>
-                    {/* <Typography variant="subtitle1" component="div">
-                        Selected: {selectedValue}
-                    </Typography> */}
+        <div className="add-new-chatroom" style={{textAlign: "right", padding: "10px"}}>
             {/* <h2>Selected user: &emsp; {user.name}</h2> */}
                     {/* <br /> */}
                     {/* <Button variant="contained" onClick={handleClickOpen}>
                         Open simple dialog
                     </Button> */}
-            
+            <label htmlFor="select-user-button">
+                Select Player<br/>
+            </label>
             <button id="select-user-button" onClick={handleClickOpen} style={{height: "65px", width: "65px"}}>
                     <img src={usericon} style={{width: "40px", filter: "invert(0.8)"}}/>
             </button>
+            {player ? 
+                <Typography variant="subtitle1" component="div">
+                        Selected: {selectedValue}
+                </Typography> : null
+            }
                 <br/><br/>
-            <label htmlFor="select-user-button">
-                Select Player<br/>
-                {/* <p style={{color: "white"}}>{selectedValue}</p> */}
-            </label>
-
             <SimpleDialog
                 selectedValue={selectedValue}
                 open={open}

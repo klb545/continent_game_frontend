@@ -1,4 +1,33 @@
-.App {
+.main_container{
+  display: grid;
+  grid-template:
+    "a b" 15vh
+    "c d" 80vh / 1fr 1fr;
+  /* column-gap: 15px; */
+}
+.map_container{
+  background-color: rgb(127, 232, 255);
+  width: 50%;
+  /* grid-area: d; */
+}
+.header_left{
+  grid-area: a;
+}
+.header_right{
+  grid-area: b;
+}
+.main_left{
+  grid-area: c;
+}
+.main_right{
+  grid-area: d;
+}
+
+div{
+  border: 1px solid blue;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +64,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
